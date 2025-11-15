@@ -7,6 +7,8 @@ local Configuration = {
 	ParserUrl = "https://raw.githubusercontent.com/depthso/Roblox-parser/refs/heads/main/dist/Main.luau"
 }
 
+print("[Sigma Spy] v12.0.1 - Config Fix Build - Loaded")
+
 --// Load overwrites
 local Parameters = {...}
 local Overwrites = Parameters[1]

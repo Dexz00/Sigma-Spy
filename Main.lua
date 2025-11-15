@@ -14,25 +14,26 @@
 	@author Dexz00
 	@repo https://github.com/Dexz00/Sigma-Spy
 	@license MIT
-	@description v12.0.0
+	@description v12.0.1 - Config Fix Build
     
 	This file is COMPILED, check /src folder for the source
 	Build scripts are available in /build
 ]]
 
-local a,b={UseWorkspace=false,NoActors=false,FolderName='Sigma Spy',RepoUrl=
+local a={UseWorkspace=false,NoActors=false,FolderName='Sigma Spy',RepoUrl=
 'https://raw.githubusercontent.com/Dexz00/Sigma-Spy/main',ParserUrl=
 [[https://raw.githubusercontent.com/depthso/Roblox-parser/refs/heads/main/dist/Main.luau]]
-},{...}local c=b[1]if typeof(c)=='table'then for d,e in c do a[d]=e end end
-local d=setmetatable({},{__index=function(d,e)local f=game:GetService(e)return
-cloneref(f)end})local e=(function()local e,f={UseWorkspace=false,Folder=
-'Sigma spy',RepoUrl=nil,FolderStructure={['Sigma Spy']={'assets'}}}function e:
-Init(g)local h,i=self.FolderStructure,g.Services f=i.HttpService self:
-CheckFolders(h)end function e:PushConfig(g)for h,i in next,g do self[h]=i end
-end function e:UrlFetch(g)local h={Url=g:gsub(' ','%%20'),Method='GET'}local i,j
-=pcall(request,h)if not i then warn'[!] HTTP request error! Check console (F9)'
-warn('> Url:',g)error(j)return''end local k,l=j.Body,j.StatusCode if l==404 then
-warn'[!] The file requested has moved or been deleted.'warn(' >',g)return''end
+}print'[Sigma Spy] v12.0.1 - Config Fix Build - Loaded'local b={...}local c=b[1]
+if typeof(c)=='table'then for d,e in c do a[d]=e end end local d=setmetatable({}
+,{__index=function(d,e)local f=game:GetService(e)return cloneref(f)end})local e=
+(function()local e,f={UseWorkspace=false,Folder='Sigma spy',RepoUrl=nil,
+FolderStructure={['Sigma Spy']={'assets'}}}function e:Init(g)local h,i=self.
+FolderStructure,g.Services f=i.HttpService self:CheckFolders(h)end function e:
+PushConfig(g)for h,i in next,g do self[h]=i end end function e:UrlFetch(g)local
+h={Url=g:gsub(' ','%%20'),Method='GET'}local i,j=pcall(request,h)if not i then
+warn'[!] HTTP request error! Check console (F9)'warn('> Url:',g)error(j)return''
+end local k,l=j.Body,j.StatusCode if l==404 then warn
+'[!] The file requested has moved or been deleted.'warn(' >',g)return''end
 return k,j end function e:MakePath(g)local h=self.Folder return`{h}/{g}`end
 function e:LoadCustomasset(g)if not getcustomasset then return end if not g then
 return end local h=readfile(g)if#h<=0 then return end local i,j=pcall(
