@@ -73,7 +73,7 @@ local Processed = ReplaceCompiles(MainFile)
 Processed = ReplaceInserts(Processed)
 fs.writeFile(OutputFile, Processed)
 
-local DarkLuaResponce = process.exec("darklua", {
+local DarkLuaResponce = process.spawn("darklua", {
 	"process",
 	OutputFile,
 	OutputFile,
